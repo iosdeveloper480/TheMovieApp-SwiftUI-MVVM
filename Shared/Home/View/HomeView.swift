@@ -2,14 +2,35 @@
 //  HomeView.swift
 //  TheMovieApp SwiftUI (iOS)
 //
-//  Created by EDS on 08/12/2021.
+//  Created by Waqas Ali on 08/12/2021.
 //
 
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject var viewModel = MoviesViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(viewModel.movies.listOfMovies) { movie in
+                NavigationLink {
+                    HomeDetailView(movieId: "\(movie.movieID)")
+                } label: {
+                    HomeCell(movieModel: movie)
+                }
+            }
+            .listStyle(PlainListStyle())
+            .task {
+                await viewModel.getMovies()
+            }
+            .refreshable {
+                await viewModel.getMovies()
+            }
+            
+            .navigationTitle("Movies List")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

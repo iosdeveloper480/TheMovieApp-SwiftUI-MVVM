@@ -2,7 +2,7 @@
 //  TheMovieApp_SwiftUIApp.swift
 //  Shared
 //
-//  Created by EDS on 08/12/2021.
+//  Created by Waqas Ali on 08/12/2021.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct TheMovieApp_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

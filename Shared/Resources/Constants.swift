@@ -1,12 +1,11 @@
-////  Created by Victor Hernandez.
-//  Copyright © 2020 Victor Hernandez. All rights reserved.
-//  Contact victoralfonso920@gmail.com
+////  Created by Waqas Ali.
+//  Copyright © 2021 Waqas Ali. All rights reserved.
+//  Contact waqasaliw@gmail.com
 
 import Foundation
 
 struct Constants {
-    static let apiKey = "?api_key=25aaa557f2b0d891d56ad03950ff849c"
-    
+    static let apiKey = "?api_key=YOUR_API_KEY"
     
     struct URL {
         static let main = "https://api.themoviedb.org/"
